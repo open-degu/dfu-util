@@ -1,0 +1,13 @@
+diff --git a/src/dfu.c b/src/dfu.c
+index 14d7673..0409c01 100644
+--- a/src/dfu.c
++++ b/src/dfu.c
+@@ -30,7 +30,7 @@
+ #include "dfu.h"
+ #include "quirks.h"
+ 
+-static int dfu_timeout = 5000;  /* 5 seconds - default */
++static int dfu_timeout = 10000;  /* 10 seconds - default */
+ 
+ /*
+  *  DFU_DETACH Request (DFU Spec 1.0, Section 5.1)
