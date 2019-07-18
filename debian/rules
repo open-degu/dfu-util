@@ -1,0 +1,19 @@
+#!/usr/bin/make -f
+
+# export DH_VERBOSE = 1
+
+export DEB_BUILD_MAINT_OPTIONS = hardening=+all
+
+export DEB_CFLAGS_MAINT_APPEND = -Wall -Wextra -pedantic
+
+export DEB_LDFLAGS_MAINT_APPEND = -Wl,--as-needed
+
+override_dh_installudev:
+	@# Copy udev rules file into debian/ so that dh_installudev finds it.
+	cp doc/40-dfuse.rules debian/dfu-util.udev
+	dh_installudev
+	rm -f debian/dfu-util.udev
+
+%:
+	dh $@ --with autotools_dev
+

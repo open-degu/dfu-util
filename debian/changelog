@@ -1,0 +1,115 @@
+dfu-util (0.9-1) unstable; urgency=medium
+
+  * New upstream release (Closes: #814277).
+  * Install the upstream udev rules file.
+  * Switch from cdbs to plain dh.
+  * Standards-Version: 3.9.7 (no changes required).
+  * debian/copyright: Update.
+  * Update to the new upstream homepage in multiple places.
+  * debian/watch: Update to format version 4, update tarball location.
+
+ -- Uwe Hermann <uwe@debian.org>  Wed, 02 Mar 2016 18:58:52 +0100
+
+dfu-util (0.8-1) unstable; urgency=medium
+
+  * New upstream release (Closes: #696866).
+    + Fixes "crashes with exit status 139" (Closes: #715814).
+      This was reproducible with 0.5 but not with 0.8.
+  * debian/compat: Set version to 9.
+  * debian/control:
+    + Update package description.
+    + Standards-Version: 3.9.6.
+    + Build-depend on debhelper (>= 9).
+  * debian/copyright: Update, make the file machine-readable.
+  * debian/docs: Add DEVICES.txt.
+  * Install dfu-prefix and dfu-suffix binaries.
+  * Install dfuse-pack.py in /usr/share/doc/dfu-util/examples.
+  * Cannot reproduce "Segfault upon dfu-util -l" (Closes: #654558).
+    Neither 0.5 not 0.8 seem to segfault. Please reopen if this is
+    still an issue in dfu-util 0.8.
+
+ -- Uwe Hermann <uwe@debian.org>  Sat, 04 Oct 2014 15:12:31 +0200
+
+dfu-util (0.5-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Uwe Hermann <uwe@debian.org>  Mon, 26 Dec 2011 20:18:19 +0100
+
+dfu-util (0.4-1) unstable; urgency=low
+
+  * New upstream release.
+  * Standards-Version: 3.9.2 (no changes required).
+  * Change Build-Depends libusb-dev to libusb-1.0-0-dev (upstream switch).
+
+ -- Uwe Hermann <uwe@debian.org>  Wed, 31 Aug 2011 23:10:22 +0200
+
+dfu-util (0.3-1) unstable; urgency=low
+
+  * New upstream release.
+  * Standards-Version: 3.9.1 (no changes required).
+  * debian/rules: Drop obsolete dfu-util_static removal, it's gone upstream.
+  * debian/patches/00_upload_fixes.patch: Drop, merged upstream.
+  * debian/copyright: Small updates.
+
+ -- Uwe Hermann <uwe@debian.org>  Fri, 31 Dec 2010 22:32:52 +0100
+
+dfu-util (0.1-1) unstable; urgency=low
+
+  * New upstream release.
+    + Now states that only DFU 1.0 is supported (Closes: #569938).
+  * debian/control:
+    + Standards-Version: 3.9.0 (no changes required).
+    + Updated to new upstream homepage.
+    + Drop dependency on autoconf/automake, we no longer build from svn.
+  * debian/copyright: Various updates.
+  * debian/watch: Add proper URLs now, we no longer track svn snapshots.
+  * Fix "odd exit w/ upload; no error handling w/ download" (Closes: #582956).
+    Thanks C. Scott Ananian <cscott@cscott.net> for the patch!
+
+ -- Uwe Hermann <uwe@debian.org>  Sat, 24 Jul 2010 15:46:44 +0200
+
+dfu-util (0.0+r4880-1) unstable; urgency=low
+
+  * Acknowledge NMU (Closes: #469892). Thanks Riku Voipio <riku.voipio@iki.fi>.
+  * New upstream release.
+    + This should also fix some broken behaviour on big-endian architectures.
+  * debian/control:
+    + Standards-Version: 3.8.0 (no changes required).
+    + Small description fix to silence bogus lintian warning.
+  * debian/copyright: Updates.
+  * debian/dfu-util.1: Dropped, now included upstream.
+  * debian/watch: Add dummy file to silence lintian (we track svn revisions).
+  * debian/rules: Remove generated files from diff.
+
+ -- Uwe Hermann <uwe@debian.org>  Sun, 28 Dec 2008 05:47:51 +0100
+
+dfu-util (0.0+r4067-3.1) unstable; urgency=low
+
+  * Non-maintainer upload.
+  * 0 day NMU for RC bug
+  * Add pkg-config to build-depends and verify with pbuilder that it works,
+    closes: #469892 , thanks Sebastian Bober sbober servercare.de
+
+ -- Riku Voipio <riku.voipio@iki.fi>  Wed, 28 May 2008 18:08:17 +0300
+
+dfu-util (0.0+r4067-3) unstable; urgency=low
+
+  * Add missing autoconf/automake build dependencies (Closes: #468791).
+  * I wrote a manpage, as there is none upstream.
+
+ -- Uwe Hermann <uwe@debian.org>  Sat, 01 Mar 2008 16:40:04 +0100
+
+dfu-util (0.0+r4067-2) unstable; urgency=low
+
+  * Do not install the dfu-util_static binary, it's not needed in Debian.
+  * debian/copyright: Convert to the machine-readable format described at
+    http://wiki.debian.org/Proposals/CopyrightFormat.
+
+ -- Uwe Hermann <uwe@debian.org>  Wed, 27 Feb 2008 21:24:42 +0100
+
+dfu-util (0.0+r4067-1) unstable; urgency=low
+
+  * Initial release (Closes: #465896).
+
+ -- Uwe Hermann <uwe@debian.org>  Wed, 27 Feb 2008 16:45:28 +0100
